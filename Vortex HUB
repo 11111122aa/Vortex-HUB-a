@@ -1,0 +1,66 @@
+# Vortex-HUB
+Vortex HUB
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex HUB</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #container {
+            margin-top: 100px;
+        }
+        input, button {
+            background-color: black;
+            color: lime;
+            border: 1px solid lime;
+            padding: 10px;
+            margin: 5px;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Vortex HUB</h1>
+        <input type="text" id="commandInput" placeholder="Digite o comando...">
+        <button onclick="executeCommand()">Executar</button>
+    </div>
+    <script>
+        const commandList = {
+            "/i2": () => alert("Comando /i2 executado!"),
+            "/godmode": () => alert("God Mode ativado!"),
+            "/bringall": () => alert("Todos os jogadores foram trazidos!"),
+            "/noclip": () => alert("Noclip ativado!"),
+            "/killall": () => alert("Todos os jogadores foram eliminados!"),
+            "/spawnfruit": () => alert("Fruta spawnada!"),
+            "/heal": () => alert("Vida restaurada!"),
+            "/ban": () => alert("Jogador banido!"),
+            "/kick": () => alert("Jogador expulso!"),
+            "/freeze": () => alert("Jogador congelado!"),
+            "/rain": () => alert("Chuva ativada!"),
+            "/disguise": () => alert("Disfarce ativado!"),
+            "/fruitrain": () => alert("Chuva de frutas ativada!"),
+            "/yt": () => alert("Comando de YouTuber ativado!"),
+            "/volley2": () => alert("Comando volley2 executado!")
+        };
+
+        function executeCommand() {
+            let command = document.getElementById("commandInput").value;
+            if (commandList[command]) {
+                commandList[command]();
+            } else {
+                alert("Comando inválido!");
+            }
+        }
+    </script>
+</body>
+</html>
